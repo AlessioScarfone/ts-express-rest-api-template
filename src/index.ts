@@ -35,13 +35,20 @@ const initHelmetMiddleware = (app: Express): Express => {
 
 const initMonitorPage = (app: Express) => {
     if (STATUS_PAGE_USER && STATUS_PAGE_PWD && STATUS_PAGE) {
-        const statusMonitor = monitor(monitorConfig(PORT, ''));
+        const statusMonitor = monitor(monitorConfig([
+            {
+                protocol: 'http',
+                host: 'localhost',
+                path: '/admin/health',
+                port: PORT
+            }
+        ], ''));
         app.use((statusMonitor as any).middleware); // use the "middleware only" property to manage websockets
         const users: { [key: string]: string } = {}
         users[STATUS_PAGE_USER] = STATUS_PAGE_PWD;
         const realm = nanoid();
-        console.log("STATUS PAGE - realm: " + realm);
-        app.get('/status', expressBasicAuth({
+        // console.log("STATUS PAGE - realm: " + realm);
+        app.get('/admin/status', expressBasicAuth({
             users,
             challenge: true,
             realm

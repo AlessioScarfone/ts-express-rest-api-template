@@ -1,4 +1,6 @@
-const monitorConfig = (port: number | string = 8080, path = '/status') => {
+import { ExpressStatusMonitorConfig, HealthCheck } from "express-status-monitor";
+
+const monitorConfig = (healthChecks: HealthCheck[] = [], path = '/status'): ExpressStatusMonitorConfig => {
     return {
         title: 'Server Status',
         theme: 'default.css',     // Default styles
@@ -6,10 +8,12 @@ const monitorConfig = (port: number | string = 8080, path = '/status') => {
         spans: [{
             interval: 1,            // Every second
             retention: 60           // Keep 60 datapoints in memory
-        }, {
-            interval: 5,            // Every 5 seconds
-            retention: 60
-        }, {
+        }, 
+        // {
+        //     interval: 5,            // Every 5 seconds
+        //     retention: 60
+        // },
+        {
             interval: 15,           // Every 15 seconds
             retention: 60
         }],
@@ -22,14 +26,7 @@ const monitorConfig = (port: number | string = 8080, path = '/status') => {
             rps: true,
             statusCodes: true
         },
-        healthChecks: [
-            {
-                protocol: 'http',
-                host: 'localhost',
-                path: '/admin/health',
-                port: port
-            }
-        ],
+        healthChecks,
         ignoreStartsWith: '/admin'
     }
 }
