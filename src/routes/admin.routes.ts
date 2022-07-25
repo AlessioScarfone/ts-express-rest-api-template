@@ -1,8 +1,8 @@
-import { Router, Request, Response, NextFunction } from "express";
+import { Router, Request, Response } from "express";
 
 const adminRouter = Router();
 
-adminRouter.get('/health', async (req: Request, res: Response, next: NextFunction) => {
+adminRouter.get('/health', async (req: Request, res: Response) => {
     res.status(200).send({ result: 'success' })
 })
 

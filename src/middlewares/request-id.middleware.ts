@@ -9,6 +9,7 @@ import { nanoid } from 'nanoid';
  * @returns 
  */
 export default function requestIDMiddleware(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     generator = (req: Request) => nanoid(),
     headerName = 'X-Request-Id',
     setHeader = true,
@@ -26,6 +27,3 @@ export default function requestIDMiddleware(
         next();
     };
 }
-
-
-export { requestIDMiddleware }
