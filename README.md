@@ -4,3 +4,4 @@ TODO:
   - monitor
     - with auth
 - test
+- build
