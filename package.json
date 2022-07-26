@@ -1,7 +1,7 @@
 {
   "name": "ts-express-rest-api-template",
   "version": "0.0.1",
-  "description": "Template project for REST API (TS + Express))",
+  "description": "Template project for REST API (TS + Express)",
   "main": "server.js",
   "scripts": {
     "start": "nodemon -r dotenv/config --watch src src/index.ts dotenv_config_path=.env",
@@ -17,7 +17,8 @@
     "typescript",
     "template",
     "rest",
-    "api"
+    "api",
+    "boilerplate"
   ],
   "author": "Alessio Scarfone",
   "license": "MIT",
