@@ -1,7 +1,1 @@
-TODO:
-
-- index
-  - monitor
-    - with auth
-- test
-- build
+# Simple Express Server boilerplate
