@@ -59,14 +59,15 @@ const logRegisteredRoutes = (app: Express) => {
 }
 
 
-const createApp = (): Express => {
+const createApp = (logRoute = true): Express => {
   const app: Express = express();
   loadExpressMiddleware(app);
 
   // attach router
   app.use('/', Routers.adminRouter);
-
-  logRegisteredRoutes(app);
+  
+  if(logRoute)
+    logRegisteredRoutes(app);
 
   return app;
 }

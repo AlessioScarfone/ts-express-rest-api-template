@@ -8,7 +8,7 @@ export default class BootstrapHelpers {
         if (this.appInstance) {
             return this.appInstance;
         }
-        const app = createApp();
+        const app = createApp(false);
         // await app.init();
         this.appInstance = app;
         return this.appInstance;

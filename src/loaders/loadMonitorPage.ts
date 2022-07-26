@@ -23,7 +23,7 @@ const loadMonitorPage = (app: Express) => {
 
         const realm = nanoid();
         // console.log("STATUS PAGE - realm: " + realm);
-        app.get(env.monitor.page, expressBasicAuth({
+        app.get(`/admin/${env.monitor.page}`, expressBasicAuth({
             users,
             challenge: true,
             realm

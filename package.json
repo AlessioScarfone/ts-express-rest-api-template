@@ -7,7 +7,7 @@
     "start": "nodemon -r dotenv/config --watch src src/index.ts dotenv_config_path=.env",
     "lint": "eslint src",
     "build": "rimraf dist && tsc",
-    "test": "jest",
+    "test": "jest --verbose=true",
     "test:watch": "jest --watch"
   },
   "keywords": [
