@@ -1,4 +1,4 @@
-# Simple Express Server boilerplate (TypeScript)
+# Simple Express Server boilerplate (with TypeScript)
 
 ## Features
 
