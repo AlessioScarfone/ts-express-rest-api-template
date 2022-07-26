@@ -1,5 +1,4 @@
-import adminRouter from "./admin.routes";
-
+import adminRouter from "./admin/admin.routes"
 
 export {
     adminRouter,
