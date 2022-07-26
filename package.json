@@ -6,9 +6,11 @@
   "scripts": {
     "start": "nodemon -r dotenv/config --watch src src/index.ts dotenv_config_path=.env",
     "lint": "eslint src",
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist && tsc --project tsconfig.build.json",
     "test": "jest --verbose=true",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prestart-prod":"npm run build",
+    "start-prod": "node -r dotenv/config dist/index.js dotenv_config_path=.env.prod"
   },
   "keywords": [
     "express",

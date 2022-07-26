@@ -34,7 +34,6 @@ const logRegisteredRoutes = (app: Express) => {
     if (middleware.route)
       return { path: middleware?.route?.path, methods: middleware?.route?.methods }
     else if (middleware.name == 'router') {
-      console.log(middleware)
       //routes attached to a router
       return middleware.handle.stack.map((handler: any) => {
         return { path: handler?.route?.path, methods: handler?.route?.methods }
