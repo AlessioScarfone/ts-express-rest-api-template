@@ -11,7 +11,7 @@ const loadMonitorPage = (app: Express) => {
             {
                 protocol: 'http',
                 host: 'localhost',
-                path: '/admin/health',
+                path: '/api/admin/health',
                 port: env.port
             }
         ], ''));

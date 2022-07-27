@@ -41,18 +41,6 @@ const logRegisteredRoutes = (app: Express) => {
     }
   }).flat(Infinity).filter((e: any) => e)
 
-  // app._router.stack.forEach(function (middleware: any) {
-  //   if (middleware.route) { // routes registered directly on the app
-  //     console.log(">", middleware.route)
-  //     routes.push(middleware.route);
-  //   } else if (middleware.name === 'router') { // router middleware 
-  //     middleware.handle.stack.forEach(function (handler: any) {
-  //       console.log(">>", handler.route)
-  //       if (handler.route)
-  //         routes.push(handler.route);
-  //     });
-  //   }
-  // });
   console.log(routes);
   console.log("=======================")
 }
