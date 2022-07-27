@@ -12,6 +12,8 @@ import loadHelmetMiddleware from "./loaders/loadHelmetMiddleware";
 const loadExpressMiddleware = (app: Express) => {
   if (env.monitor.enabled && env.monitor.user && env.monitor.page && env.monitor.password)
     loadMonitorPage(app)
+  else 
+    console.log(">> Monitor not configured <<")
 
   loadHelmetMiddleware(app);
   app.use(cors());
