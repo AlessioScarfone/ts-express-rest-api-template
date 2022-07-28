@@ -2,6 +2,10 @@ function toBool(value: string | undefined | null): boolean {
     return value === 'true';
 }
 
+function toNumber(value: string): number {
+    return parseInt(value, 10);
+}
+
 /**
  * Get `required` env variable
  * @param key
