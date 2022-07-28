@@ -6,6 +6,10 @@ function toNumber(value: string): number {
     return parseInt(value, 10);
 }
 
+function toArray(key: string, delimiter = ','): string[] {
+    return process.env[key] && process?.env?.[key]?.split(delimiter) || [];
+}
+
 /**
  * Get `required` env variable
  * @param key
