@@ -2,15 +2,17 @@
   "name": "ts-express-rest-api-template",
   "version": "0.0.1",
   "description": "Template project for REST API (TS + Express)",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon -r dotenv/config --watch src src/index.ts dotenv_config_path=.env",
+    "start-dev": "nodemon -r dotenv/config --watch src src/index.ts dotenv_config_path=.env",
+    "start-prod": "node -r dotenv/config dist/index.js dotenv_config_path=.env.prod",
     "lint": "eslint src",
     "build": "rimraf dist && tsc --project tsconfig.build.json",
-    "test": "jest --verbose=true",
+    "test": "jest --verbose=true --runInBand --detectOpenHandles --forceExit",
     "test:watch": "jest --watch",
     "prestart-prod":"npm run build",
-    "start-prod": "node -r dotenv/config dist/index.js dotenv_config_path=.env.prod"
+    "prod": "node dist/index.js",
+    "docker-build": "docker build -t ts-express-rest-api-template --progress=plain ."
   },
   "keywords": [
     "express",

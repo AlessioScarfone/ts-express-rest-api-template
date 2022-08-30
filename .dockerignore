@@ -1,0 +1,13 @@
+Dockerfile
+docker-compose.yml
+README.md
+node_modules/
+npm-debug.log
+src/**/tests
+.env*
+env.sample
+jest.config.js
+LICENSE
+.eslint*
+log*
+dist
