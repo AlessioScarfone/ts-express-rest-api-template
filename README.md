@@ -1,6 +1,6 @@
-# Simple Express Server boilerplate (with TypeScript)
+#Simple Express Server boilerplate (with TypeScript)
 
-## Features
+##Features
 
 **Basic Middleware:**
 - helmet
